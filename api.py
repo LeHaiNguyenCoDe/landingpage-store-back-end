@@ -17,12 +17,8 @@ class UserModel(db.Model):
         return f"User(name={self.name}, email={self.email})"
 
 user_args = reqparse.RequestParser()
-user_args.add_argument(
-    "name", type=str, help="Name cannot be blank", required=True
-)
-user_args.add_argument(
-    "email", type=str, help="Email cannot be blank", required=True
-)
+user_args.add_argument("name", type=str, help="Name cannot be blank", required=True)
+user_args.add_argument("email", type=str, help="Email cannot be blank", required=True)
 
 user_fields = {
     "id": fields.Integer,
@@ -35,6 +31,7 @@ class Users(Resource):
     def get(self):
         users = UserModel.query.all()
         return users
+
     @marshal_with(user_fields)
     def post(self):
         args = user_args.parse_args()
@@ -78,8 +75,6 @@ api.add_resource(User, "/api/users/<int:id>")
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'Hello from Vercel!'
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# 💡 **Quan trọng:** Xóa `if __name__ == '__main__':` vì Vercel tự khởi chạy ứng dụng.

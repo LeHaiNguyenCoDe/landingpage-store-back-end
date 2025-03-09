@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "__pycache__",
+			"path": "."
+		},
+		{
+			"name": ".mypy_cache",
+			"path": "../.mypy_cache"
+		},
+		{
+			"name": ".venv",
+			"path": "../.venv"
+		},
+		{
+			"name": "instance",
+			"path": "../instance"
+		},
+		{
+			"name": "python-back-end",
+			"path": "../../python-back-end"
+		}
+	],
+	"settings": {}
+}
